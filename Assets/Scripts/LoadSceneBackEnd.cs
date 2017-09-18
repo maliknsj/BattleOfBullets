@@ -17,11 +17,12 @@ public class LoadSceneBackEnd : MonoBehaviour {
 		yield return new WaitForSeconds (3);
 
 		AsyncOperation asyncopp = Application.LoadLevelAsync (3);
-		LoadingPercent.text = asyncopp.progress.ToString();
-		LoadingCircle.GetComponent<Image> ().fillAmount = asyncopp.progress / 100;
 
 
 		while (!asyncopp.isDone) {
+			
+			LoadingPercent.text = (asyncopp.progress * 100f).ToString();
+			LoadingCircle.GetComponent<Image> ().fillAmount = asyncopp.progress / 100;
 			yield return null;
 		}
 	}
