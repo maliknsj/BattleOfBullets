@@ -30,6 +30,10 @@ sysinfo.txt
 /*.tmp
 /*.svd
 /*.meta
+/ProjectSettings
+/Library
+/obj
+/App Build
 /Assets/3D\ Models
 /Assets/2DLightAsset
 /Assets/EffectExamples
