@@ -34,28 +34,28 @@ sysinfo.txt
 /Library
 /obj
 /App Build
-/Assets/3D\ Models
-/Assets/2DLightAsset
-/Assets/EffectExamples
-/Assets/FPS\ Essentials\ Kit
-/Assets/FPS\ Kit\ By\ (HDGameP)
-/Assets/Helicopter
-/Assets/Military1
-/Assets/Particle\ System
-/Assets/PreFabs
-/Assets/Scenes
-/Assets/Sentinel\ FPS\ GUI
-/Assets/Standard\ Assets
-/Assets/Textures\ and\ Sprites
-/Assets/UI\ Final\ Elements
-/Assets/WorldArmy
-/Assets/Visual
-/Assets/EZ\ Camera\ Shake
-/Assets/EffectExamples
-/Assets/2DLightAsset
-/Assets/genSWAT
-/Assets/Grenades_Ammo_FPS
-/Assets/Materials
+/Assets/3D\ Models/
+/Assets/2DLightAsset/
+/Assets/EffectExamples/
+/Assets/FPS\ Essentials\ Kit/
+/Assets/FPS\ Kit\ By\ (HDGameP)/
+/Assets/Helicopter/
+/Assets/Military1/
+/Assets/Particle\ System/
+/Assets/PreFabs/
+/Assets/Scenes/
+/Assets/Sentinel\ FPS\ GUI/
+/Assets/Standard\ Assets/
+/Assets/Textures\ and\ Sprites/
+/Assets/UI\ Final\ Elements/
+/Assets/WorldArmy/
+/Assets/Visual/
+/Assets/EZ\ Camera\ Shake/
+/Assets/EffectExamples/
+/Assets/2DLightAsset/
+/Assets/genSWAT/
+/Assets/Grenades_Ammo_FPS/
+/Assets/Materials/
 
 # ============ #
 # OS generated #
