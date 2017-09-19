@@ -5,6 +5,8 @@ using UnityEngine;
 public class FPSm16Controller : MonoBehaviour {
 	private Animator anim;
 	public bool isreloading = false;
+	public Transform ParentForGunData;
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -27,7 +29,12 @@ public class FPSm16Controller : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown (KeyCode.R)) {
-			Plyyyy ();
+			if (ParentForGunData.GetComponent<GunData> ().Bullets == 30) {
+				return;
+			}
+			else {
+				Plyyyy ();
+			}
 		}
 
 		if (Input.GetKey (KeyCode.W)) {
