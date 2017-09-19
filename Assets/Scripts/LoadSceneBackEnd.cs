@@ -20,10 +20,14 @@ public class LoadSceneBackEnd : MonoBehaviour {
 
 
 		while (!asyncopp.isDone) {
-			
-			LoadingPercent.text = (asyncopp.progress * 100f).ToString();
-			LoadingCircle.GetComponent<Image> ().fillAmount = asyncopp.progress / 100;
+
+			if (asyncopp.progress >= 0.89) {
+				asyncopp.allowSceneActivation = true;
+			}
+			float progress = Mathf.Clamp01(asyncopp.progress / 0.9f);
+			LoadingPercent.text = ((int)(progress * 100)).ToString();
+			LoadingCircle.GetComponent<Image> ().fillAmount = progress;
 			yield return null;
 		}
 	}
-}	
+}
