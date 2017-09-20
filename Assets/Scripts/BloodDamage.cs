@@ -24,20 +24,20 @@ public class BloodDamage : MonoBehaviour {
 
 		if (h.health <= 70 && h.health >= 50) {
 			temp = image.color;
-			temp.a = 120f;
+			temp.a = 0.5f;
 			image.color = temp;
 		}
 
 		if (h.health <= 50 && h.health >= 30) {
 			temp = image.color;
-			temp.a = 210f;
+			temp.a = 0.7f;
 			image.color = temp;
 		}
 
 		if (h.health <= 30 && h.health > 0) {
 			h.Healingspeed = 5f;
 			temp = image.color;
-			temp.a = 255;
+			temp.a = 1f;
 			image.color = temp;
 		}
 	}

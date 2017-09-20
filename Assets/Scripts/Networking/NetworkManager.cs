@@ -57,7 +57,6 @@ public class NetworkManager : MonoBehaviour {
 				GOB.transform.Find ("NameHeader").GetComponent<Text> ().text = player.name;
 				GOB.transform.Find ("KillsHeader").GetComponent<Text> ().text = Kills;
 				GOB.transform.Find ("DeathHeader").GetComponent<Text> ().text = Deaths;
-				GOB.transform.Find ("AssistHeader").GetComponent<Text> ().text = Assists;
 			}
 //			int NumbrofPlayers = (int)PhotonNetwork.countOfPlayers;
 			ScoreBoardPanelParent.GetComponent<CanvasGroup> ().alpha = 1;
@@ -90,9 +89,6 @@ public class NetworkManager : MonoBehaviour {
 		else if (h.health < 40 && h.health > 0) {
 			PlayerHealth.color = Color.red;
 		}
-
-
-
 	}
 
 	void Connect(){
@@ -126,7 +122,8 @@ public class NetworkManager : MonoBehaviour {
 
 	void OnPhotonRandomJoinFailed(){
 		Debug.Log ("OnPhotonRandomJoinFailed");
-		PhotonNetwork.CreateRoom ( "Daz Daz Room" );
+//		PhotonNetwork.CreateRoom ( "Daz Daz Room" );
+		PhotonNetwork.CreateRoom("DazDaz",new RoomOptions(){MaxPlayers = 10},null);
 	}
 
 	void OnJoinedRoom(){

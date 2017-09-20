@@ -3,27 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RoomList : Photon.PunBehaviour {
+public class RoomList : MonoBehaviour {
 	public GameObject RoomBoardEntry;
 	public GameObject RoomBoardPanelParent;
 
-	// Use this for initialization
-	void Start () {
-		
+
+	void Start(){
+		PhotonNetwork.ConnectUsingSettings ("Version 01");
 	}
 
-	// Update is called once per frame
-	void Update () {
-			foreach (RoomInfo room in PhotonNetwork.GetRoomList()) {
-				Debug.Log (room.Name+ " Name ");
-				GameObject RoomObject = (GameObject)Instantiate (RoomBoardEntry);
-				RoomObject.transform.SetParent (RoomBoardPanelParent.transform);
-				RoomObject.transform.Find ("NameHeader").GetComponent<Text> ().text = room.name;
-			}
-	}
+//	void OnGUI(){
+//		foreach (RoomInfo room in PhotonNetwork.GetRoomList()) {
+//			if (GUILayout.Button (room.Name.ToString ())) {
+//				PhotonNetwork.JoinRoom (room.Name);
+//			}
+//		}
+//	}
 
-	void OnReceivedRoomListUpdate (){ 	
-
-
+	void OnReceivedRoomListUpdate(){
+		foreach (RoomInfo room in PhotonNetwork.GetRoomList()) {
+			GameObject RoomObject = (GameObject)Instantiate (RoomBoardEntry);
+			RoomObject.transform.SetParent (RoomBoardPanelParent.transform);
+			RoomObject.transform.Find ("NameHeader").GetComponent<Text> ().text = room.name;
+			RoomObject.transform.Find ("CurrentPlayersHeader").GetComponent<Text>().text = room.PlayerCount.ToString();
+			RoomObject.transform.Find ("TotalPlayersHeader").GetComponent<Text>().text = room.MaxPlayers.ToString();
+		}
 	}
 }
