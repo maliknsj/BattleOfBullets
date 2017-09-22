@@ -12,6 +12,12 @@ public class HeroSelect : MonoBehaviour {
 	public GameObject LoadingScreen;
 	AudioSource source;
 
+	[Header("Assign Buttons for Heros")]
+	public GameObject AmandaBtn;
+	public GameObject SwatBtn;
+	public GameObject SwatNothBtn;
+	public GameObject USSOLDIERBtn;
+
 	void Start(){
 		source = Camera.main.GetComponent<AudioSource> ();
 	}
@@ -23,9 +29,10 @@ public class HeroSelect : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out hit)) {
 				SelectedHero = hit.collider.name;
+				ButtonsON ();
 				if (SelectedHero != null) {
 					hit.collider.transform.Find ("Selection").gameObject.SetActive (true);
-					UI.SetActive (true);
+//					UI.SetActive (true);
 				}
 			}
 		}
@@ -45,5 +52,33 @@ public class HeroSelect : MonoBehaviour {
 		Camera.main.GetComponent<AudioSource> ().PlayOneShot (Resources.Load("Sounds/IN game Sounds/ready") as AudioClip);
 		UI.SetActive (false);
 		Application.LoadLevel (2);
+	}
+
+	void ButtonsON(){
+		if (SelectedHero == "Amanda") {
+			SwatBtn.gameObject.SetActive (false);
+			SwatNothBtn.gameObject.SetActive (false);
+			USSOLDIERBtn.gameObject.SetActive (false);
+			AmandaBtn.gameObject.SetActive (true);
+		}
+		else if (SelectedHero == "genSWAT") {
+			SwatNothBtn.gameObject.SetActive (false);
+			USSOLDIERBtn.gameObject.SetActive (false);
+			AmandaBtn.gameObject.SetActive (false);
+			SwatBtn.gameObject.SetActive (true);
+		}
+		else if (SelectedHero == "genSWAT North") {
+			SwatBtn.gameObject.SetActive (false);
+			USSOLDIERBtn.gameObject.SetActive (false);
+			AmandaBtn.gameObject.SetActive (false);
+			SwatNothBtn.gameObject.SetActive (true);
+
+		}
+		else if (SelectedHero == "USSOLDIER") {
+			SwatNothBtn.gameObject.SetActive (false);
+			AmandaBtn.gameObject.SetActive (false);
+			SwatBtn.gameObject.SetActive (false);
+			USSOLDIERBtn.gameObject.SetActive (true);
+		}
 	}
 }

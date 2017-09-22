@@ -16,7 +16,7 @@ public class LoadSceneBackEnd : MonoBehaviour {
 	IEnumerator LoadScene(){
 		yield return new WaitForSeconds (3);
 
-		AsyncOperation asyncopp = Application.LoadLevelAsync (3);
+		AsyncOperation asyncopp = Application.LoadLevelAsync (MapChooseButtons.SelectedMap);
 
 
 		while (!asyncopp.isDone) {
