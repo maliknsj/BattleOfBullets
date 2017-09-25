@@ -8,6 +8,8 @@ public class MapChooseButtons : MonoBehaviour {
 	public Transform ForestPanel;
 	public Transform DesertPanel;
 	public Transform TBDPanel;
+	public Transform RoomSettingsPanel;
+
 
 	[Space(10)]
 
@@ -89,5 +91,11 @@ public class MapChooseButtons : MonoBehaviour {
 		if (!isTrue) {
 			ForestPanel.GetComponent<Animator> ().SetBool ("Run", false);
 		}
+	}
+
+	public void GoClick(){
+		ForestPanel.GetComponent<Animator> ().SetBool ("Run", false);
+		MilitryPackPanel.GetComponent<Animator> ().SetBool ("Run", false);
+		RoomSettingsPanel.GetComponent<Animator> ().SetBool ("Run", true);
 	}
 }
