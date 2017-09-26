@@ -29,4 +29,13 @@ public class RoomList : MonoBehaviour {
 			RoomObject.transform.Find ("TotalPlayersHeader").GetComponent<Text>().text = room.MaxPlayers.ToString();
 		}
 	}
+
+	public void ShowJoinText(){
+		GameObject.Find ("JoinText").transform.position =  Input.mousePosition;
+		GameObject.Find ("JoinText").GetComponent<CanvasGroup> ().alpha = 1;
+	}
+
+	public void HideJoinText(){
+		GameObject.Find ("JoinText").GetComponent<CanvasGroup> ().alpha = 0;
+	}
 }
