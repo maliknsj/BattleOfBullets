@@ -76,7 +76,7 @@ public class NetworkManager : MonoBehaviour {
 		}
 
 		//Set Player Name in UI text
-		PlayerName.text = PhotonNetwork.player.name;
+		PlayerName.text = PhotonNetwork.playerName;
 
 		//Checking Health
 		PlayerHealth.text = (int) Mathf.Abs(h.health) + "";
@@ -122,8 +122,8 @@ public class NetworkManager : MonoBehaviour {
 
 	void OnPhotonRandomJoinFailed(){
 		Debug.Log ("OnPhotonRandomJoinFailed");
-//		PhotonNetwork.CreateRoom ( "Daz Daz Room" );
-		PhotonNetwork.CreateRoom("DazDaz",new RoomOptions(){MaxPlayers = 10},null);
+		PhotonNetwork.CreateRoom ( RoomInfoForward.RoomName + "Room name is here" );
+		PhotonNetwork.CreateRoom(RoomInfoForward.RoomName,new RoomOptions(){MaxPlayers = 10},null);
 	}
 
 	void OnJoinedRoom(){

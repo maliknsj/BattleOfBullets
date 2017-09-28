@@ -56,7 +56,9 @@ public class Fire : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown (KeyCode.R)) {
-			GD.ReloadGun ();
+			if (GD.Bullets != 30 && !(GD.ExtraAmmo <= 0)) {
+				GD.ReloadGun ();
+			}
 		}
 	}
 

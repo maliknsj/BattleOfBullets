@@ -6,6 +6,7 @@ public class HeroSelectForward : MonoBehaviour {
 	public static string HeroName;
 	AudioSource source;
 	public GameObject LoadingUI;
+	public string NameAssign;
 
 	void Start(){
 		source = Camera.main.GetComponent<AudioSource> ();
@@ -19,7 +20,7 @@ public class HeroSelectForward : MonoBehaviour {
 
 	void Update(){
 		if (Input.GetMouseButtonDown (0)) {
-			HeroName = "Amanda";
+			HeroName = NameAssign;
 		}
 	}
 

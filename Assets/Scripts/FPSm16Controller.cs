@@ -29,7 +29,7 @@ public class FPSm16Controller : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown (KeyCode.R)) {
-			if (ParentForGunData.GetComponent<GunData> ().Bullets == 30) {
+			if (ParentForGunData.GetComponent<GunData> ().Bullets == 30 || (ParentForGunData.GetComponent<GunData>().ExtraAmmo == 0)){
 				return;
 			}
 			else {
